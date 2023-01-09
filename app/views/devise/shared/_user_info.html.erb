@@ -2,7 +2,7 @@
 	<h2>User info</h2>
 	<table class='table'>
 		<tr>
-			<%= image_tag user.get_image, size: "100x100" %>
+			<%= image_tag user.get_profile_image, size: "100x100" %>
 		</tr>
 		<tr>
 			<th>name</th>
@@ -15,7 +15,7 @@
 	</table>
 
 	<div class='row'>
-		<%= link_to (edit_user_path(current_user.id)), class: 'btn btn-outline-secondary btn-block' do %>
+		<%= link_to (edit_user_path(user.id)), class: 'btn btn-outline-secondary btn-block' do %>
 			<i class="fas fa-user-cog"></i>
 		<% end %>
 	</div>
@@ -29,7 +29,7 @@
 
 	  <div class="form-group">
 		  <label for="book_opinion">Opinion</label>
-		  <%= f.text_area :opinion, class: 'form-control book_opinion' %>
+		  <%= f.text_area :body, class: 'form-control book_opinion' %>
 		</div>
 	  <%= f.submit 'Create Book', class: 'btn btn-success' %>
 	<% end %>

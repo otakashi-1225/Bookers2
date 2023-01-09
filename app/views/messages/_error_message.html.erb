@@ -1,0 +1,8 @@
+<% if var.errors.any? %>
+  <h3><%= var.errors.count %> error prohibited this book from being saved:</h3>
+  <ul>
+    <% var.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

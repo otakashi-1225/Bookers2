@@ -1,9 +1,6 @@
 <div class="container px-5 px-sm-0">
 	<div class="row">
-		<% if user_signed_in? and %>
-			<%= render 'devise/shared/user_info', new_book: @new_book, user: @user%>
-		<% end %>
-
+		<%= render 'devise/shared/user_info', new_book: @new_book, user: @user%>
 		<div class="col-md-8 offset-md-1">
 			<h2>Users</h2>
 			<table class="table">
@@ -18,7 +15,7 @@
 				<% @users.each do |user| %>
 					<tr>
 						<td>
-							<%= image_tag user.get_image , size: "80x80"%>
+							<%= image_tag user.get_profile_image , size: "80x80"%>
 						</td>
 						<td><%= user.name %></td>
 						<td><%= link_to "Show", (user_path(user.id))%></td>
